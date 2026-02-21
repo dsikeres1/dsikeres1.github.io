@@ -1,4 +1,9 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
+node_modules
+dist
+*.local
+*.tsbuildinfo
+.astro/
+
+.DS_Store
+.idea/
+.vscode/
