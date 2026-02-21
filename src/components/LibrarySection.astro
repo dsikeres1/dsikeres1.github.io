@@ -1,0 +1,110 @@
+---
+const packages = [
+  {
+    name: '@dsikeres1/react-date-range-picker-headless',
+    label: 'Headless',
+    description: 'Unstyled, fully composable. Bring your own styles.',
+    install: 'pnpm add @dsikeres1/react-date-range-picker-headless',
+  },
+  {
+    name: '@dsikeres1/react-date-range-picker-tailwind3',
+    label: 'Tailwind v3',
+    description: 'Pre-styled with Tailwind CSS v3. Drop-in ready.',
+    install: 'pnpm add @dsikeres1/react-date-range-picker-tailwind3',
+  },
+  {
+    name: '@dsikeres1/react-date-range-picker-tailwind4',
+    label: 'Tailwind v4',
+    description: 'Pre-styled with Tailwind CSS v4. Drop-in ready.',
+    install: 'pnpm add @dsikeres1/react-date-range-picker-tailwind4',
+  },
+]
+---
+
+<section class="px-6 py-24 md:py-32">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="text-center text-3xl font-bold tracking-tight md:text-4xl">
+      react-date-range-picker
+    </h2>
+    <p class="mt-4 text-center text-lg text-zinc-400">
+      A headless, composable date range picker for React.
+    </p>
+
+    <!-- Package Cards -->
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+      {packages.map((pkg) => (
+        <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
+          <h3 class="text-lg font-semibold">{pkg.label}</h3>
+          <p class="mt-2 text-sm text-zinc-400">{pkg.description}</p>
+          <div class="mt-4 flex items-center gap-2 rounded-lg bg-zinc-950 px-3 py-2">
+            <code class="flex-1 overflow-x-auto text-xs text-zinc-300 whitespace-nowrap">
+              {pkg.install}
+            </code>
+            <button
+              class="copy-btn shrink-0 cursor-pointer rounded p-1 text-zinc-500 transition-colors hover:text-zinc-200"
+              data-copy={pkg.install}
+              aria-label="Copy install command"
+            >
+              <svg class="copy-icon h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+              </svg>
+              <svg class="check-icon hidden h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Links -->
+    <div class="mt-12 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="https://github.com/dsikeres1/react-date-range-picker"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
+      >
+        <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            fill-rule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clip-rule="evenodd"
+          />
+        </svg>
+        View on GitHub
+      </a>
+      <a
+        href="https://buymeacoffee.com/dsikeres1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-5 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-amber-400"
+      >
+        ☕ Buy me a coffee
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy')
+      if (!text) return
+
+      await navigator.clipboard.writeText(text)
+
+      const copyIcon = btn.querySelector('.copy-icon') as HTMLElement
+      const checkIcon = btn.querySelector('.check-icon') as HTMLElement
+
+      copyIcon.classList.add('hidden')
+      checkIcon.classList.remove('hidden')
+
+      setTimeout(() => {
+        copyIcon.classList.remove('hidden')
+        checkIcon.classList.add('hidden')
+      }, 2000)
+    })
+  })
+</script>
