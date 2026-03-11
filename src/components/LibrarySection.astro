@@ -3,44 +3,101 @@ const packages = [
   {
     name: 'react-date-range-picker-headless',
     label: 'Headless',
-    description: 'Unstyled, fully composable. Bring your own styles.',
+    description: 'Zero dependencies. Unstyled hooks — full control over markup and styling.',
     install: 'pnpm add react-date-range-picker-headless',
   },
   {
     name: 'react-date-range-picker-styled',
     label: 'Styled',
-    description: 'Pre-styled with vanilla CSS. No framework needed.',
+    description: 'Pre-styled with vanilla CSS and CSS variables. No framework needed.',
     install: 'pnpm add react-date-range-picker-styled',
   },
   {
     name: 'react-date-range-picker-tailwind3',
     label: 'Tailwind v3',
-    description: 'Pre-styled with Tailwind CSS v3. Drop-in ready.',
+    description: 'Pre-styled with Tailwind CSS v3. Drop-in ready with dark mode.',
     install: 'pnpm add react-date-range-picker-tailwind3',
   },
   {
     name: 'react-date-range-picker-tailwind4',
     label: 'Tailwind v4',
-    description: 'Pre-styled with Tailwind CSS v4. Drop-in ready.',
+    description: 'Pre-styled with Tailwind CSS v4. shadcn/ui compatible.',
     install: 'pnpm add react-date-range-picker-tailwind4',
   },
 ]
+
+const features = [
+  { icon: '📦', text: 'Zero Dependencies' },
+  { icon: '🎯', text: '5 Picker Types' },
+  { icon: '🌍', text: '15 Locales' },
+  { icon: '🌙', text: 'Dark Mode' },
+  { icon: '♿', text: 'Accessible' },
+  { icon: '⌨️', text: 'Keyboard Nav' },
+]
 ---
 
-<section class="px-6 py-24 md:py-32">
-  <div class="mx-auto max-w-4xl">
-    <h2 class="text-center text-3xl font-bold tracking-tight md:text-4xl">
-      react-date-range-picker
-    </h2>
-    <p class="mt-4 text-center text-lg text-zinc-400">
-      A headless, composable date range picker for React.
-    </p>
+<section class="px-6 py-12 md:py-16">
+  <div class="mx-auto max-w-5xl rounded-2xl border border-zinc-800/50 bg-zinc-900/20 p-8 md:p-12">
+    <!-- Header: Logo + Title + Description -->
+    <div class="flex flex-col items-center text-center">
+      <img
+        src="/rdrp-logo.svg"
+        alt="react-date-range-picker logo"
+        class="h-16 w-16 md:h-20 md:w-20"
+      />
+      <h2 class="mt-6 text-3xl font-bold tracking-tight md:text-4xl">
+        react-date-range-picker
+      </h2>
+      <p class="mt-3 text-lg text-zinc-400">
+        A headless, composable date &amp; date range picker for React.
+      </p>
+    </div>
+
+    <!-- Shields.io Badges -->
+    <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+      <a href="https://www.npmjs.com/package/react-date-range-picker-headless" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/npm/v/react-date-range-picker-headless?style=flat-square&label=npm&color=cb3837" alt="npm version" loading="lazy" />
+      </a>
+      <a href="https://www.npmjs.com/package/react-date-range-picker-headless" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/npm/dw/react-date-range-picker-headless?style=flat-square&label=downloads&color=234" alt="npm downloads" loading="lazy" />
+      </a>
+      <a href="https://github.com/dsikeres1/react-date-range-picker" target="_blank" rel="noopener noreferrer">
+        <img src="https://img.shields.io/github/stars/dsikeres1/react-date-range-picker?style=flat-square&color=e3b341" alt="GitHub stars" loading="lazy" />
+      </a>
+      <img src="https://img.shields.io/npm/l/react-date-range-picker-headless?style=flat-square&color=blue" alt="license" loading="lazy" />
+      <img src="https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square" alt="TypeScript" loading="lazy" />
+    </div>
+
+    <!-- Features -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-zinc-400">
+      {features.map((f) => (
+        <span class="inline-flex items-center gap-1.5">
+          <span>{f.icon}</span>
+          <span>{f.text}</span>
+        </span>
+      ))}
+    </div>
 
     <!-- Package Cards -->
-    <div class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
       {packages.map((pkg) => (
-        <div class="rounded-xl border border-zinc-800 bg-zinc-900 p-6">
-          <h3 class="text-lg font-semibold">{pkg.label}</h3>
+        <div class="group rounded-xl border border-zinc-800 bg-zinc-900 p-5 transition-colors hover:border-zinc-700">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">{pkg.label}</h3>
+            <a
+              href={`https://www.npmjs.com/package/${pkg.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-600 transition-colors hover:text-red-400"
+              aria-label={`${pkg.label} on npm`}
+              title="View on npm"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+                <path d="M0 256V0h256v256H0z" fill="currentColor" />
+                <path d="M48 48v160h80v-128h48v128h32V48H48z" fill="#fff" />
+              </svg>
+            </a>
+          </div>
           <p class="mt-2 text-sm text-zinc-400">{pkg.description}</p>
           <div class="mt-4 flex items-center gap-2 rounded-lg bg-zinc-950 px-3 py-2">
             <code class="flex-1 overflow-x-auto text-xs text-zinc-300 whitespace-nowrap">
@@ -64,8 +121,34 @@ const packages = [
       ))}
     </div>
 
+    <!-- shadcn/ui Install -->
+    <div class="mt-10 rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+      <div class="flex items-center gap-3">
+        <span class="rounded-md bg-zinc-800 px-2 py-1 text-xs font-medium text-zinc-300">shadcn/ui</span>
+        <p class="text-sm text-zinc-400">Using Tailwind v4? Add the date picker directly via shadcn registry:</p>
+      </div>
+      <div class="mt-3 flex items-center gap-2 rounded-lg bg-zinc-950 px-4 py-3">
+        <code class="flex-1 overflow-x-auto text-sm text-zinc-300 whitespace-nowrap">
+          npx shadcn add https://dsikeres1.github.io/react-date-range-picker/r/date-picker.json
+        </code>
+        <button
+          class="copy-btn shrink-0 cursor-pointer rounded p-1 text-zinc-500 transition-colors hover:text-zinc-200"
+          data-copy="npx shadcn add https://dsikeres1.github.io/react-date-range-picker/r/date-picker.json"
+          aria-label="Copy shadcn install command"
+        >
+          <svg class="copy-icon h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+            <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+          </svg>
+          <svg class="check-icon hidden h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
     <!-- Links -->
-    <div class="mt-12 flex flex-wrap items-center justify-center gap-4">
+    <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
       <a
         href="https://dsikeres1.github.io/react-date-range-picker/"
         target="_blank"
@@ -91,6 +174,18 @@ const packages = [
           />
         </svg>
         GitHub
+      </a>
+      <a
+        href="https://www.npmjs.com/package/react-date-range-picker-headless"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-zinc-500 hover:text-white"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
+          <path d="M0 256V0h256v256H0z" />
+          <path d="M48 48v160h80v-128h48v128h32V48H48z" fill="#18181b" />
+        </svg>
+        npm
       </a>
       <a
         href="https://buymeacoffee.com/dsikeres1"

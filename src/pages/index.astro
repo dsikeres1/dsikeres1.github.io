@@ -2,11 +2,31 @@
 import Layout from '../layouts/Layout.astro'
 import Hero from '../components/Hero.astro'
 import LibrarySection from '../components/LibrarySection.astro'
+import Footer from '../components/Footer.astro'
 ---
 
 <Layout>
   <main>
     <Hero />
+
+    <!-- Projects -->
+    <section class="px-6 pt-16 pb-4">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-center text-sm font-semibold uppercase tracking-widest text-zinc-500">
+          Open Source Projects
+        </h2>
+      </div>
+    </section>
+
     <LibrarySection />
+
+    <!-- Future projects go here -->
+    <!--
+    <div class="mx-auto max-w-5xl px-6">
+      <hr class="border-zinc-800/50" />
+    </div>
+    <AnotherProjectSection />
+    -->
   </main>
+  <Footer />
 </Layout>
