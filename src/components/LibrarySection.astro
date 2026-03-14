@@ -52,6 +52,8 @@ const features = [
         src="/rdrp-logo.svg"
         alt="react-date-range-picker logo"
         class="h-16 w-16 md:h-20 md:w-20"
+        width="80"
+        height="80"
       />
       <h2 class="mt-6 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">
         react-date-range-picker
@@ -64,10 +66,10 @@ const features = [
     <!-- Shields.io Badges (common only) -->
     <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
       <a href="https://github.com/dsikeres1/react-date-range-picker" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.shields.io/github/stars/dsikeres1/react-date-range-picker?style=flat-square&color=e3b341" alt="GitHub stars" loading="lazy" />
+        <img src="https://img.shields.io/github/stars/dsikeres1/react-date-range-picker?style=flat-square&color=e3b341" alt="GitHub stars" loading="lazy" width="80" height="20" />
       </a>
-      <img src="https://img.shields.io/npm/l/react-date-range-picker-headless?style=flat-square&color=blue" alt="license" loading="lazy" />
-      <img src="https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square" alt="TypeScript" loading="lazy" />
+      <img src="https://img.shields.io/npm/l/react-date-range-picker-headless?style=flat-square&color=blue" alt="license" loading="lazy" width="80" height="20" />
+      <img src="https://img.shields.io/badge/TypeScript-strict-3178c6?style=flat-square" alt="TypeScript" loading="lazy" width="120" height="20" />
     </div>
 
     <!-- Features -->
@@ -87,8 +89,8 @@ const features = [
           <h3 class="text-lg font-semibold">{pkg.label}</h3>
           <!-- Per-package badges -->
           <div class="mt-2 flex items-center gap-1.5">
-            <img src={`https://img.shields.io/npm/v/${pkg.name}?style=flat-square&label=&color=cb3837`} alt="version" loading="lazy" class="h-[18px]" />
-            <img src={`https://img.shields.io/npm/dw/${pkg.name}?style=flat-square&label=weekly&color=234`} alt="downloads" loading="lazy" class="h-[18px]" />
+            <img src={`https://img.shields.io/npm/v/${pkg.name}?style=flat-square&label=&color=cb3837`} alt="version" loading="lazy" class="h-[18px]" width="60" height="18" />
+            <img src={`https://img.shields.io/npm/dw/${pkg.name}?style=flat-square&label=weekly&color=234`} alt="downloads" loading="lazy" class="h-[18px]" width="90" height="18" />
           </div>
           <p class="mt-2 text-sm text-zinc-400">{pkg.description}</p>
           <div class="mt-auto pt-3">
@@ -96,7 +98,7 @@ const features = [
               href={`https://www.npmjs.com/package/${pkg.name}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-xs text-zinc-500 transition-colors hover:text-red-400"
+              class="inline-flex items-center gap-1.5 text-xs text-zinc-400 transition-colors hover:text-red-400"
             >
               <svg class="h-3.5 w-3.5" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
                 <path d="M0 256V0h256v256H0z" fill="currentColor" />
@@ -139,7 +141,7 @@ const features = [
       <div class="mt-4 flex flex-col gap-3">
         {shadcnComponents.map((comp) => (
           <div>
-            <span class="mb-1.5 block text-[11px] font-medium text-zinc-500 sm:text-xs">{comp.label}</span>
+            <span class="mb-1.5 block text-[11px] font-medium text-zinc-400 sm:text-xs">{comp.label}</span>
             <div class="flex items-center gap-2 overflow-hidden rounded-lg bg-zinc-950 px-3 py-2 sm:px-4 sm:py-2.5">
               <code class="min-w-0 flex-1 overflow-x-auto text-[11px] text-zinc-300 whitespace-nowrap sm:text-xs">npx shadcn add https://dsikeres1.github.io/react-date-range-picker/r/{comp.name}.json</code>
               <button
@@ -187,7 +189,7 @@ const features = [
             clip-rule="evenodd"
           />
         </svg>
-        GitHub
+        GitHub Repository
       </a>
     </div>
   </div>

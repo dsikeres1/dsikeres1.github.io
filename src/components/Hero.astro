@@ -1,10 +1,16 @@
 <section class="flex flex-col items-center justify-center px-6 py-16 sm:py-24 md:py-48">
   <h1>
-    <img
-      src="/logo-dark.png"
-      alt="DSikeres1"
-      class="h-16 w-auto md:h-24"
-    />
+    <picture>
+      <source srcset="/logo-dark.webp" type="image/webp" />
+      <img
+        src="/logo-dark.png"
+        alt="DSikeres1"
+        class="h-16 w-auto md:h-24"
+        width="640"
+        height="240"
+        fetchpriority="high"
+      />
+    </picture>
   </h1>
   <p class="mt-4 text-lg text-zinc-400 md:text-xl">
     Developer &amp; Open Source Contributor
@@ -22,6 +28,6 @@
         clip-rule="evenodd"
       />
     </svg>
-    GitHub
+    GitHub Profile
   </a>
 </section>
